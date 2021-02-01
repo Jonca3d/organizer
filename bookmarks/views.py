@@ -3,6 +3,11 @@ from .models import Bookmark
 from django.views.generic.base import View
 from .forms import BookmarkForm
 
+
+def main_page(request):
+    return render(request, 'base.html')
+
+
 def bookmarks_page(request):
     return render(
         request,
