@@ -7,6 +7,9 @@ from .forms import BookmarkForm
 def main_page(request):
     return render(request, 'base.html')
 
+def test_page(request):
+    return render(request, 'base_test.html')
+
 
 def bookmarks_page(request):
     return render(
@@ -21,4 +24,4 @@ class AddBookmark(View):
         print(form)
         if form.is_valid():
             form.save()
-        return redirect("/")
+        return redirect("bookmark")

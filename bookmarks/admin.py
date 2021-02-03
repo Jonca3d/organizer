@@ -10,3 +10,6 @@ class BookmarkAdmin(admin.ModelAdmin):
 
 admin.site.register(Category)
 
+
+admin.site.site_title = "Django Organizer"
+admin.site.site_header = 'Django Organizer'
