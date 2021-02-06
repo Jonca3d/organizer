@@ -20,5 +20,6 @@ from bookmarks.views import bookmarks_page
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include('main_page.urls'))
     path('', include('bookmarks.urls')),
 ]
