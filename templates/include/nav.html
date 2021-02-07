@@ -1,10 +1,8 @@
-{% block navigation %}
-
-<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar sticky-top navbar-expand-lg bg-nav">
   <!-- Контейнер (определяет ширину компонента Navbar) -->
   <div class="container-fluid">
       <!-- Бренд и кнопка «Гамбургер» -->
-      <a class="navbar-brand" href="#">ORGANIZER</a>
+      <a class="navbar-brand" href="{% url 'index' %}">ORGANIZER</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse"
               data-target="#navbar-example" aria-controls="navbar-example"
               aria-expanded="false" aria-label="Toggle navigation">
@@ -46,5 +44,3 @@
       </div>
   </div>
 </nav>
-
-{% endblock navigation %}

@@ -1,0 +1,27 @@
+.bg-nav {
+  background-color: #41B3A3;
+  color: #FFF;
+}
+
+.bg-nav a {
+  color: #EEE;
+  text-shadow: 1px 1px 2px black, 0 0 1em #E27D60;
+}
+
+.bg-nav a:hover {
+  color: #FFF;
+  text-shadow: 1px 1px 4px black, 0 0 1em #E27D60;
+}
+
+.content-area {
+  background-color: #85CDCA;
+  box-shadow: 0 0 5px;
+}
+
+.notification-area {
+  background-color: #7DC2AD;
+}
+
+.information-area {
+  background-color: #9FE5DD;
+}
