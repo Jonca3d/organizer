@@ -1,5 +1,5 @@
 from django import template
-
+from bookmarks.models import Category
 
 
 register = template.Library()
@@ -16,3 +16,4 @@ def show_notification_area():
 @register.inclusion_tag('include/other_information_area.html')
 def show_other_information_area():
   return
+

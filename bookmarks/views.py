@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Bookmark
+from .models import Bookmark, Category
 from django.views.generic.base import View
 from .forms import BookmarkForm
 
@@ -15,7 +15,7 @@ def bookmarks_page(request):
     return render(
         request,
         'bookmarks/index.html',
-        {'bookmarks': Bookmark.objects.all()})
+        {'bookmarks': Bookmark.objects.all(), 'categories': Category.objects.all()})
 
 
 class AddBookmark(View):

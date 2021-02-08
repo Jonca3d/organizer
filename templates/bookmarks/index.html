@@ -1,24 +1,57 @@
 {% extends 'base_test.html' %}
+{% load static %}
+{% load app_tags %}
+
+{% block links %}
+
+<link rel="stylesheet" href="{% static 'css/bookmarks.css' %}">
+
+{% endblock links %}
 
 
 {% block content %}
-<form action="{% url 'add_bookmark' %}" method="POST">
-{% csrf_token %}
-    <input class="form-control mt-3" type="text" name="title" id="bookmarktitle" placeholder="Inter your text">
-    <textarea class="form-control mt-3"  name="description" id="bookmarkdescription" rows="3" placeholder="Descriptionnon for your bookmark"></textarea>
-    <input type="hidden" name="userr" id="id_userr" value="jonca3d">
-    <button type="submit" class="btn btn-dark mt-3 mb-3">Добавить</button>
-</form>
-{% for bookmark in bookmarks %}
-    <p>
-    <b>{{ bookmark.title }}</b>
-    <br>
-    {{ bookmark.description }}
-    <br>
-    {{ bookmark.category }}
-    <br>
-    {{ bookmark.published }}
-    </p>
-{% endfor %}
+
+<div class="row">
+    <div class="col col-lg-4">
+        <form action="{% url 'add_bookmark' %}" method="POST">
+        {% csrf_token %}
+            <input class="form-control mt-3 add-bookmark-form" 
+                   type="text" 
+                   name="title" 
+                   id="bookmarktitle" 
+                   placeholder="Enter your text">
+            <textarea class="form-control mt-3 add-bookmark-form"  
+                      name="description" 
+                      id="bookmarkdescription" 
+                      rows="3" 
+                      placeholder="Descriptionnon for your bookmark"></textarea>
+            <select class="custom-select add-bookmark-form mt-3" id="inputGroupSelect01">
+                <option selected>Выбрать категорию</option>
+                {% for category in categories %}
+                    <option value="{{ category.id }}">{{ category.name }}</option>
+                {% endfor %}
+            </select>
+                
+            <input type="hidden" name="userr" id="id_userr" value="jonca3d">
+            <button type="submit" class="btn btn-dark mt-3 mb-3">Добавить</button>
+        </form>
+    </div>
+    <div class="col mt-3">
+        <div class="bookmark-list">
+            {% for bookmark in bookmarks %}
+                <p>
+                <b>{{ bookmark.title }}</b>  
+                [<i>{{ bookmark.category }}</i>] 
+                [<i>{{ bookmark.published }}</i>]
+                <br>
+                {{ bookmark.description }}
+                <br>
+                
+                </p>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
 
 {% endblock content %}
