@@ -25,10 +25,9 @@
                       id="bookmarkdescription" 
                       rows="3" 
                       placeholder="Descriptionnon for your bookmark"></textarea>
-            <select class="custom-select add-bookmark-form mt-3" id="inputGroupSelect01">
-                <option selected>Выбрать категорию</option>
+            <select class="custom-select add-bookmark-form mt-3" name="category" id="bookmarkcategory">
                 {% for category in categories %}
-                    <option value="{{ category.id }}">{{ category.name }}</option>
+                    <option   value="{{ category.id }}">{{ category.name }}</option>
                 {% endfor %}
             </select>
                 
