@@ -19,6 +19,7 @@ class Bookmark(models.Model):
     description = models.TextField('Описание',)
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     category = models.ForeignKey(Category, on_delete=models.PROTECT, null=True)
+    status = models.BooleanField(default=True, null=True)
     published = models.DateTimeField(
         auto_now_add=True,
         db_index=True,
