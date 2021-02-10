@@ -3,7 +3,7 @@
 }
 
 .bookmark-list {
-  height:150px; /* высота нашего блока */
+  height:70vh; /* высота нашего блока */
   background: #9DF1ED; /* цвет фона, белый */
   border: 1px solid #C1C1C1; /* размер и цвет границы блока */
   /* overflow-x: scroll; прокрутка по горизонтали */
